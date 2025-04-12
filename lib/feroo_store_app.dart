@@ -3,7 +3,7 @@ import 'package:feroo_store/core/app/env.variabels.dart';
 import 'package:feroo_store/core/app/languages/app_localizations.dart';
 import 'package:feroo_store/core/app/languages/app_localizations_setup.dart';
 import 'package:feroo_store/core/common/screans/no_network_screan.dart';
-import 'package:feroo_store/core/routes/app_route.dart';
+import 'package:feroo_store/routes/app_route.dart';
 import 'package:feroo_store/core/style/font/font_size.dart';
 import 'package:feroo_store/core/style/theme/app_theme.dart';
 import 'package:flutter/material.dart';
