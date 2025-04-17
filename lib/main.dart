@@ -2,6 +2,8 @@ import 'package:feroo_store/core/app/env.variabels.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'features/theme/presentation/cubit/theme_cubit.dart';
 import 'feroo_store_app.dart';
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +21,11 @@ void main()async {
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitDown,DeviceOrientation.portraitUp,
   ]).then((_){
-    runApp(const MyApp());
+    runApp( BlocProvider(
+      create: (_) => ThemeCubit(),
+      child: const MyApp(),
+    ),
+    );
   });
 }
 

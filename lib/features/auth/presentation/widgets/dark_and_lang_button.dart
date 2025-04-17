@@ -5,7 +5,10 @@ import 'package:feroo_store/core/common/widgets/text_app.dart';
 import 'package:feroo_store/core/extension/context_extension.dart';
 import 'package:feroo_store/core/style/font/font_size.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../theme/presentation/cubit/theme_cubit.dart';
 
 class DarkAndLangButton extends StatelessWidget{
   @override
@@ -17,10 +20,10 @@ class DarkAndLangButton extends StatelessWidget{
         CustomFadeInRight(
           duration:600,
           child: CustomLinearButton(
-              onPressed:(){
-
-              },
-              child: Icon(Icons.light_mode_rounded,
+              onPressed: () => context.read<ThemeCubit>().toggleTheme(),
+              child: Icon( context.watch<ThemeCubit>().state.themeMode == ThemeMode.dark
+                  ? Icons.nightlight_round
+                  : Icons.wb_sunny,
               color: Colors.white
                 ,)
           ),
