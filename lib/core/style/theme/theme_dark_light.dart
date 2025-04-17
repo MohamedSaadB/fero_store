@@ -7,7 +7,7 @@ import 'package:feroo_store/core/style/theme/assets_extension.dart';
 import 'package:feroo_store/core/style/theme/color_extension.dart';
 import 'package:flutter/material.dart';
 
-ThemeData themeDark(){
+ThemeData themeDark(Locale local){
 
   return ThemeData(
     scaffoldBackgroundColor: ColorsDark.mainColor,
@@ -17,12 +17,12 @@ ThemeData themeDark(){
       displaySmall: TextStyle(
         fontSize: 14,
         color: ColorsDark.white,
-        fontFamily:FontFamilyHelper.getLocalizationFontFamily()
+        fontFamily:FontFamilyHelper.getLocalizationFontFamily(local)
       )
     )
   );
 }
-ThemeData themeLight(){
+ThemeData themeLight(Locale local){
 
   return ThemeData(
       scaffoldBackgroundColor: ColorsLight.mainColor,
@@ -32,7 +32,7 @@ ThemeData themeLight(){
           displaySmall: TextStyle(
               fontSize: 14,
               color: ColorsDark.black1,
-              fontFamily:FontFamilyHelper.getLocalizationFontFamily()
+              fontFamily:FontFamilyHelper.getLocalizationFontFamily(local)
           )
       )
   );

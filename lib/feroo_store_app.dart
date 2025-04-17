@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
                   supportedLocales: AppLocalizationsSetup.supportedLocales,
                   localeResolutionCallback: AppLocalizationsSetup.localeResolutionCallback,
                   localizationsDelegates: AppLocalizationsSetup.localizationsDelegates,
-                  theme:cubit.isDark?themeDark():themeLight(),
+                  theme:cubit.isDark?themeDark(cubit.locale):themeLight(cubit.locale),
                   debugShowCheckedModeBanner: EnvVariabels.instance.debugMode,
                   title: 'Feroo_Store',
                   onGenerateRoute:AppRoute.onGenerateRoute,
