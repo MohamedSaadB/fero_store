@@ -1,3 +1,4 @@
+import 'package:feroo_store/core/app/app_cubit/app_cubit.dart';
 import 'package:feroo_store/core/app/connectivity_network_controller.dart';
 import 'package:feroo_store/core/app/env.variabels.dart';
 import 'package:feroo_store/core/app/languages/app_localizations.dart';
@@ -11,7 +12,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/style/font/font_family_helper.dart';
-import 'features/theme/presentation/cubit/theme_cubit.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -25,16 +25,15 @@ class MyApp extends StatelessWidget {
           return ScreenUtilInit(
             designSize: const Size(360, 690),
             minTextAdapt: true,
-            child: BlocBuilder<ThemeCubit, ThemeState>(
+            child: BlocBuilder<AppCubit,AppState>(
               builder: (context, state) {
+                final cubit = context.read<AppCubit>();
                 return MaterialApp(
-                  locale:Locale("en"),
+                  locale:cubit.locale,
                   supportedLocales: AppLocalizationsSetup.supportedLocales,
                   localeResolutionCallback: AppLocalizationsSetup.localeResolutionCallback,
                   localizationsDelegates: AppLocalizationsSetup.localizationsDelegates,
-                  theme: themeLight(),
-                  darkTheme: themeDark(),
-                  themeMode: state.themeMode,
+                  theme:cubit.isDark?themeDark():themeLight(),
                   debugShowCheckedModeBanner: EnvVariabels.instance.debugMode,
                   title: 'Feroo_Store',
                   onGenerateRoute:AppRoute.onGenerateRoute,

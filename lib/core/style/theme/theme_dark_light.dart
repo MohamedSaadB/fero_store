@@ -27,6 +27,13 @@ ThemeData themeLight(){
   return ThemeData(
       scaffoldBackgroundColor: ColorsLight.mainColor,
       extensions:<ThemeExtension<dynamic>>[MyColors.light,MyAssets.light] ,
-      useMaterial3: true
+      useMaterial3: true,
+      textTheme: TextTheme(
+          displaySmall: TextStyle(
+              fontSize: 14,
+              color: ColorsDark.black1,
+              fontFamily:FontFamilyHelper.getLocalizationFontFamily()
+          )
+      )
   );
 }
