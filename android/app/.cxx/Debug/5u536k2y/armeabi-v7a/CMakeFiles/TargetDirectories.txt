@@ -1,0 +1,2 @@
+F:/Feroo_Store/feroo_store/android/app/.cxx/Debug/5u536k2y/armeabi-v7a/CMakeFiles/edit_cache.dir
+F:/Feroo_Store/feroo_store/android/app/.cxx/Debug/5u536k2y/armeabi-v7a/CMakeFiles/rebuild_cache.dir

@@ -8,7 +8,7 @@ class ConnectivityNetworkController{
   static final ConnectivityNetworkController instance =
   ConnectivityNetworkController._();
 
-  ValueNotifier<bool> isConnect = ValueNotifier(true);
+  final ValueNotifier<bool> isConnect = ValueNotifier(true);
 
   Future<void> init()async{
     final result =  await  Connectivity().checkConnectivity() ;
