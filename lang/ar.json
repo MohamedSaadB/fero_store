@@ -31,5 +31,6 @@
     "yes": "نعم",
     "no": "لا",
     "dark_mode": "Dark Mode",
-    "lang_code": "العربية"
+    "lang_code": "العربية",
+    "empty_feild": "هذا الحقل فارغ"
 }

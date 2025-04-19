@@ -31,5 +31,6 @@
     "yes": "Yes",
     "no": "No",
     "dark_mode": "Dark Mode",
-    "lang_code": "English"
+    "lang_code": "English",
+    "empty_feild" : "this is field is empty"
 }

@@ -7,7 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'core/DI/injection_contanier.dart';
+import 'core/DI/injection_container.dart';
 import 'feroo_store_app.dart';
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +23,7 @@ void main()async {
   );
   await SharedPref().instantiatePreferences();
 
-  await initInject();
+  await InitInject();
 
   Bloc.observer = AppBlocObserver();
   await SystemChrome.setPreferredOrientations([
