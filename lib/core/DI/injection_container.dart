@@ -1,3 +1,6 @@
+import 'package:feroo_store/core/app/upload_image/cubit/upload_image_cubit.dart';
+import 'package:feroo_store/core/app/upload_image/data_source/upload_image_data_source.dart';
+import 'package:feroo_store/core/app/upload_image/repo/upload_image_repo.dart';
 import 'package:feroo_store/features/auth/data/reposatories/auth_repo.dart';
 import 'package:feroo_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter/material.dart';
@@ -35,5 +38,9 @@ Future<void> _initAuth() async {
     ..registerFactory(()=>AuthBloc(sl()))
     ..registerLazySingleton<AuthRepos>(() => AuthRepos(sl()))
     ..registerLazySingleton<AuthDataSource>(() => AuthDataSource(sl()));
+
+  sl.registerFactory(()=>UploadImageCubit(sl()));
+  sl.registerLazySingleton<UploadImageRepo>(() => UploadImageRepo(sl())) ;
+  sl.registerLazySingleton<UploadImageDataSource>(() => UploadImageDataSource(sl()));
 
 }

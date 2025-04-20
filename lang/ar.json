@@ -32,5 +32,6 @@
     "no": "لا",
     "dark_mode": "Dark Mode",
     "lang_code": "العربية",
-    "empty_feild": "هذا الحقل فارغ"
+    "empty_feild": "هذا الحقل فارغ",
+    "image_upload_error": "حدث خطأ اثناء رفع الصورة من فضلك جرب مره اخري "
 }

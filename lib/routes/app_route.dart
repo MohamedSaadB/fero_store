@@ -1,3 +1,4 @@
+import 'package:feroo_store/core/app/upload_image/cubit/upload_image_cubit.dart';
 import 'package:feroo_store/core/common/screans/under_build_screen.dart';
 import 'package:feroo_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:feroo_store/features/auth/presentation/screens/login_screen.dart';
@@ -23,7 +24,17 @@ class AppRoute {
         BlocProvider( create:(_)=> sl<AuthBloc>(),child: LogIn(),),);
       case signUp:
         return BaseRoute(page:
-        BlocProvider(create: (_)=>sl<AuthBloc>(),child: SignUp(),));
+        MultiBlocProvider(
+          providers: [
+            BlocProvider<AuthBloc>(
+              create: (_) => sl<AuthBloc>(),
+            ),
+            BlocProvider<UploadImageCubit>(
+              create: (_) => sl<UploadImageCubit>(),
+            ),
+          ],
+          child: SignUp(),
+        ),);
       default : return BaseRoute(page:PageUnderBuildScreen());
     }
   }

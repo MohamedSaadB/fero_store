@@ -33,4 +33,5 @@ class LangKeys {
   static const String darkMode = 'dark_mode';
   static const String langCode = 'lang_code';
   static const String emptyField = 'empty_feild';
+  static const String imageUploadError = 'image_upload_error';
 }
