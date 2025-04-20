@@ -4,6 +4,7 @@ import 'package:feroo_store/core/common/widgets/custom_linear_button.dart';
 import 'package:feroo_store/core/common/widgets/text_app.dart';
 import 'package:feroo_store/core/extension/context_extension.dart';
 import 'package:feroo_store/core/style/font/font_size.dart';
+import 'package:feroo_store/core/toast/show_toast.dart';
 import 'package:feroo_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -39,10 +40,10 @@ class LoginButton extends StatelessWidget{
           listener: (context,state){
              state.whenOrNull(
                success: (userRole){
-                 print("--success-->$userRole");
+                 ShowToast.showToastSuccessTop(message: "welcome again : ");
                },
                error: (errorMessage){
-                 print("--error-->$errorMessage");
+                 ShowToast.showToastSuccessTop(message: "oops!!! please remember the password  : ");
 
              }
              );

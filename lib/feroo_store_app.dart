@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'core/DI/injection_container.dart';
 import 'core/style/font/font_family_helper.dart';
 
 class MyApp extends StatelessWidget {
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
                   localizationsDelegates: AppLocalizationsSetup.localizationsDelegates,
                   theme:cubit.isDark?themeDark(cubit.locale):themeLight(cubit.locale),
                   debugShowCheckedModeBanner: EnvVariabels.instance.debugMode,
+                  navigatorKey: sl<GlobalKey<NavigatorState>>(),
                   title: 'Feroo_Store',
                   onGenerateRoute:AppRoute.onGenerateRoute,
                   initialRoute: AppRoute.login,
